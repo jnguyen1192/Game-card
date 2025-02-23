@@ -45,9 +45,9 @@ class CardTest {
 
     @Test
     fun getPower() {
-        var kwc1: String = "4"
+        var kwc1: Int = 4
         assertEquals(/* expected = */ kwc1, /* actual = */ card_base1.power)
-        var kwc2: String = "8"
+        var kwc2: Int = 8
         assertEquals(/* expected = */ kwc2, /* actual = */ card_base2.power)
     }
 

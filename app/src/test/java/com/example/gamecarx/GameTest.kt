@@ -4,6 +4,7 @@ import org.junit.Assert.*
 import org.junit.Before
 
 import org.junit.Test
+import kotlin.math.log
 
 class GameTest {
     private lateinit var game_: Game
@@ -123,6 +124,8 @@ class GameTest {
         // first player play a card on the board
         game_.init_mode_0()
         game_.players[0].playCard(0)
+        var mindbuged_card = game_.players[0].board_cards[0]
+
         // check that first player has one card on board
         assertEquals(1, game_.players[0].board_cards.size)
         // check that second player has zero card on board
@@ -137,6 +140,9 @@ class GameTest {
         assertEquals(1, game_.players[1].board_cards.size)
         // check second player mindbugs
         assertEquals(1, game_.players[1].mindbug)
-        // FUTUR test that the right card is give to player 2
+        // check right card is give to player 2
+        assertEquals(mindbuged_card, game_.players[1].board_cards[0])
     }
+    // TODO jeu en entier avec tous les états intermédiaires
+    // TODO jeu en entier avec tous les états initiaux et finales
 }
